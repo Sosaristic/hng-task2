@@ -1,7 +1,15 @@
+import { Navbar, BannerText, CardsSection } from "./components";
+
 function App() {
   return (
     <>
-      <p className="text-red-500">hng task 2</p>
+      <main>
+        <header className="min-h-[37.5rem]  bg-bannerBg bg-center relative flex flex-col px-3 md:px-[3rem] lg:px-[5.94rem]">
+          <Navbar />
+          <BannerText />
+        </header>
+        <CardsSection />
+      </main>
     </>
   );
 }

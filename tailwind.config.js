@@ -2,7 +2,19 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        rose: "#BE123C",
+        blackText: "#111827",
+        greyText: "#9CA3AF",
+      },
+    },
+    fontFamily: {
+      DMsans: ["DM Sans", "sans-serif"],
+    },
+    backgroundImage: {
+      bannerBg: "url('/svg/Poster.svg')",
+    },
   },
   plugins: [],
 };
