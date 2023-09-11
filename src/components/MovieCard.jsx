@@ -15,7 +15,7 @@ export default function MovieCard({
   const movieGenres = [];
   genre_ids.forEach((id) => {
     const genre = genres.find((item) => item.id == id);
-    movieGenres.push(genre.name);
+    movieGenres.push(genre?.name);
   });
   return (
     <div className="flex flex-col gap-[0.75rem] lg:w-[15.5rem] relative">
@@ -38,7 +38,7 @@ export default function MovieCard({
           <p>97%</p>
         </span>
       </div>
-      <p className="text-greyText font-[700]">{...movieGenres.join(", ")}</p>
+      <p className="text-greyText font-[700]"> {...movieGenres.join(", ")}</p>
     </div>
   );
 }
