@@ -1,4 +1,4 @@
-import { Navbar, BannerText, CardsSection } from "./components";
+import { Navbar, BannerText, CardsSection, Footer } from "./components";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
           <BannerText />
         </header>
         <CardsSection />
+        <Footer />
       </main>
     </>
   );

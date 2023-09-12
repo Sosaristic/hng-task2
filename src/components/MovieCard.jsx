@@ -10,6 +10,7 @@ export default function MovieCard({
   title,
   genre_ids,
   release_date,
+  vote_average,
   genres,
 }) {
   const movieGenres = [];
@@ -19,7 +20,7 @@ export default function MovieCard({
   });
   return (
     <div className="flex flex-col gap-[0.75rem] lg:w-[15.5rem] relative">
-      <div className="max-h-[23.125rem] min-h-[23.125rem] ">
+      <div className="h-[23.125rem] relative  ">
         <img
           src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : Poster404}
           alt={title}
@@ -31,14 +32,14 @@ export default function MovieCard({
       <div className="flex items-center text-[0.75rem] gap-6">
         <span className="flex gap-[10px]">
           <img src={IMDB} alt="" />
-          <p>86.0 / 100</p>
+          <p>{vote_average * 10} / 100</p>
         </span>
         <span className="flex gap-[10px]">
           <img src={Tomato} alt="" className="ml-auto" />
           <p>97%</p>
         </span>
       </div>
-      <p className="text-greyText font-[700]"> {...movieGenres.join(", ")}</p>
+      <p className="text-greyText text-[0.75rem] font-[700]"> {...movieGenres.join(", ")}</p>
     </div>
   );
 }

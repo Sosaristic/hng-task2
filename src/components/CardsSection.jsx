@@ -29,6 +29,7 @@ export default function CardsSection() {
       .catch((err) => console.log(err));
   }, []);
 
+  console.log(moviesData);
   return (
     <section className="mt-[4.38rem]  px-4 lg:px-[5rem] ">
       <div className="flex">
