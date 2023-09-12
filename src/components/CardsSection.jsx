@@ -44,7 +44,7 @@ export default function CardsSection() {
           </span>
         </Link>
       </div>
-      <div className="mt-[2.75rem] flex flex-col lg:flex-row flex-wrap justify-center gap-[4rem]">
+      <div className="mt-[2.75rem] flex flex-col md:flex-row flex-wrap justify-center gap-[4rem]">
         {moviesData.map((item) => {
           return <MovieCard key={item.id} {...item} genres={genres} />;
         })}

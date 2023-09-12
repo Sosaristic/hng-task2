@@ -13,7 +13,7 @@ export default function Footer() {
         <p>Privacy & Policy</p>
         <p>Press Room</p>
       </div>
-      <p className="self-center text-[1.125rem] text-greyText">© 2023 MovieBox by Ander_dev </p>
+      <p className="self-center md:text-[1.125rem] text-greyText">© 2023 MovieBox by Ander_dev </p>
     </footer>
   );
 }

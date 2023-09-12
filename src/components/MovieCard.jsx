@@ -19,7 +19,7 @@ export default function MovieCard({
     movieGenres.push(genre?.name);
   });
   return (
-    <div className="flex flex-col gap-[0.75rem] lg:w-[15.5rem] relative">
+    <div className="flex flex-col gap-[0.75rem] md:w-[45%] lg:w-[15.5rem] relative">
       <div className="h-[23.125rem] relative  ">
         <img
           src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : Poster404}
