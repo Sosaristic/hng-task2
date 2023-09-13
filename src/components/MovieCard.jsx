@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Poster404 from "../assets/images/poster404.jpg";
 import IMDB from "../assets/svg/imdb.svg";
 import Tomato from "../assets/svg/tomato.svg";
+import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 
 export default function MovieCard({
   backdrop_path,
@@ -15,6 +17,7 @@ export default function MovieCard({
   genres,
 }) {
   const navigate = useNavigate();
+  const [favorite, setFavorite] = useState(false);
   const movieGenres = [];
   genre_ids.forEach((id) => {
     const genre = genres.find((item) => item.id == id);
@@ -22,6 +25,10 @@ export default function MovieCard({
   });
   const handleNavigate = () => {
     navigate(`/movie/${id}`);
+  };
+  const handleFavorite = (e) => {
+    e.stopPropagation();
+    setFavorite((prev) => !prev);
   };
   return (
     <div
@@ -35,7 +42,12 @@ export default function MovieCard({
           className="h-full w-full object-cover"
         />
       </div>
-      <p className="text-greyText font-[700] text-[0.75rem]">{release_date}</p>
+      <p className="text-greyText flex font-[700] text-[0.75rem] items-center">
+        {release_date}{" "}
+        <span className="ml-auto text-xl p-1 text-rose" onClick={handleFavorite}>
+          {favorite ? <MdFavorite /> : <MdFavoriteBorder />}
+        </span>
+      </p>
       <h4 className="text-[1.125rem] font-[700] ">{title}</h4>
       <div className="flex items-center text-[0.75rem] gap-6">
         <span className="flex gap-[10px]">
