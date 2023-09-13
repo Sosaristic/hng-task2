@@ -11,9 +11,10 @@ export default {
     },
     fontFamily: {
       DMsans: ["DM Sans", "sans-serif"],
+      poppins: ["Poppins", "sans-serif"],
     },
     backgroundImage: {
-      bannerBg: "url('/svg/Poster.svg')",
+      bannerBg: "url('/images/Poster.webp')",
     },
   },
   plugins: [],

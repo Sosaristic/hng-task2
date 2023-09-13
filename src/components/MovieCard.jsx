@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Poster404 from "../assets/images/poster404.jpg";
 import IMDB from "../assets/svg/imdb.svg";
 import Tomato from "../assets/svg/tomato.svg";
@@ -13,13 +14,20 @@ export default function MovieCard({
   vote_average,
   genres,
 }) {
+  const navigate = useNavigate();
   const movieGenres = [];
   genre_ids.forEach((id) => {
     const genre = genres.find((item) => item.id == id);
     movieGenres.push(genre?.name);
   });
+  const handleNavigate = () => {
+    navigate(`/movie/${id}`);
+  };
   return (
-    <div className="flex flex-col gap-[0.75rem] md:w-[45%] lg:w-[15.5rem] relative">
+    <div
+      className="flex flex-col gap-[0.75rem] md:w-[45%] lg:w-[15.5rem] relative cursor-pointer"
+      onClick={handleNavigate}
+    >
       <div className="h-[23.125rem] relative  ">
         <img
           src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : Poster404}
@@ -36,7 +44,7 @@ export default function MovieCard({
         </span>
         <span className="flex gap-[10px]">
           <img src={Tomato} alt="" className="ml-auto" />
-          <p>97%</p>
+          <p>{vote_average * 10 + 5}%</p>
         </span>
       </div>
       <p className="text-greyText text-[0.75rem] font-[700]"> {...movieGenres.join(", ")}</p>
