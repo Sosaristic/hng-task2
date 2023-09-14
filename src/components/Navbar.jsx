@@ -5,6 +5,7 @@ import Menu from "../assets/svg/Menu.svg";
 import { MdSearch } from "react-icons/md";
 import SearchComponent from "./SearchComponent";
 import { Spinner } from "./Loader";
+import { toast } from "react-toastify";
 export default function Navbar() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
@@ -26,7 +27,7 @@ export default function Navbar() {
             setSearchedData(response.data.results);
             setStatus(response.status);
           })
-          .catch((err) => console.log(err))
+          .catch((err) => toast.error(err.message))
           .finally(() => setLoading(false));
       }, 1000);
     } else {

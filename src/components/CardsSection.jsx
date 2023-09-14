@@ -4,10 +4,12 @@ import { MdChevronRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 import MovieCard from "./MovieCard";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export default function CardsSection() {
   const [moviesData, setMoviesData] = useState([]);
   const [genres, setGenres] = useState([]);
+
   useEffect(() => {
     axios
       .get(
@@ -26,7 +28,9 @@ export default function CardsSection() {
       .then((response) => {
         setGenres(response.data.genres);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        toast.error(err.message);
+      });
   }, []);
 
   return (
