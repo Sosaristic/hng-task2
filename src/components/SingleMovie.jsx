@@ -21,6 +21,10 @@ export default function SingleMovie() {
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
   }, [movieId]);
+  const handleReleaseDate = (movieDate) => {
+    const newDate = new Date(movieDate);
+    return newDate.toUTCString();
+  };
 
   if (!movie && loading) {
     return (
@@ -56,10 +60,10 @@ export default function SingleMovie() {
         </div>
         <div className="flex flex-col items-start lg:items-center gap-2 lg:flex-row mt-[2.12rem]">
           <ul className="flex flex-col lg:flex-row gap-2 md:gap-4 font-[600] md:text-[1.2rem]">
-            <p className="">{movie.title}</p>
-            <li className="">{movie.release_date}</li>
-            <li className="">PG-13</li>
-            <li className="">{movie.runtime}mins</li>
+            <p data-testid="movie-title">{movie.title}</p>
+            <li data-testid="movie-release-date">{handleReleaseDate(movie.release_date)}</li>
+            <li>PG-13</li>
+            <li data-testid="movie-runtime">{movie.runtime}</li>
           </ul>
           <div>
             {movie.genres.map((genre) => {
@@ -84,7 +88,9 @@ export default function SingleMovie() {
             </p>
           </div>
         </div>
-        <p className="mt-[1.56rem]">{movie.overview}</p>
+        <p className="mt-[1.56rem]" data-testid="movie-overview">
+          {movie.overview}
+        </p>
       </div>
     </section>
   );
