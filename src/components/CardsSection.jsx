@@ -13,7 +13,7 @@ export default function CardsSection() {
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_API_KEY}&page=1`
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=${import.meta.env.VITE_API_KEY}&page=1`
       )
       .then((response) => {
         setMoviesData(response.data.results.splice(0, 10));
