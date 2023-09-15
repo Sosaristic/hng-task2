@@ -56,6 +56,7 @@ export default function SingleMovie() {
             }
             alt={movie.title}
             className="h-full w-full object-cover"
+data-testid="movie-poster"
           />
         </div>
         <div className="flex flex-col items-start lg:items-center gap-2 lg:flex-row mt-[2.12rem]">
