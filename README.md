@@ -6,7 +6,7 @@ This is a react application that allow users to view the top 10 popular movies, 
 
 To run this application, you will to install node js and npm if you dont have them installed already
 
-- clone this repository: https://github.com/Sosaristic/hng-task2.git
+- clone this repository: ```git clone https://github.com/Sosaristic/hng-task2.git```
 - navigate to the project directory: ``` cd hng-task-2```
 - run this command: ```npm install```
 - create a .env file in the root of the application and add your TMBD key as VITE_API_KEY = <your_api_key>
