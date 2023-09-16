@@ -13,9 +13,13 @@ export default function CardsSection() {
   useEffect(() => {
     axios
       .get(
+<<<<<<< HEAD
         `https://api.themoviedb.org/3/movie/top_rated?api_key=${
           import.meta.env.VITE_API_KEY
         }&page=1`
+=======
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=${import.meta.env.VITE_API_KEY}&page=1`
+>>>>>>> upstream/main
       )
       .then((response) => {
         setMoviesData(response.data.results.splice(0, 10));
@@ -31,7 +35,11 @@ export default function CardsSection() {
         setGenres(response.data.genres);
       })
       .catch((err) => {
+<<<<<<< HEAD
         console.log(err);
+=======
+        toast.error(err.message);
+>>>>>>> upstream/main
       });
   }, []);
 
@@ -49,7 +57,11 @@ export default function CardsSection() {
           </span>
         </Link>
       </div>
+<<<<<<< HEAD
       <div className="mt-[2.75rem] grid grid-cols-2 md:grid-cols-5 gap-8">
+=======
+      <div className="mt-[2.75rem] flex flex-col md:flex-row flex-wrap justify-center gap-[4rem]">
+>>>>>>> upstream/main
         {moviesData.map((item) => {
           return <MovieCard key={item.id} {...item} genres={genres} />;
         })}

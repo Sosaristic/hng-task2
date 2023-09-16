@@ -56,7 +56,11 @@ export default function SingleMovie() {
             }
             alt={movie.title}
             className="h-full w-full object-cover"
+<<<<<<< HEAD
             data-testid="movie-poster"
+=======
+data-testid="movie-poster"
+>>>>>>> upstream/main
           />
         </div>
         <div className="flex flex-col items-start lg:items-center gap-2 lg:flex-row mt-[2.12rem]">
@@ -64,7 +68,11 @@ export default function SingleMovie() {
             <p data-testid="movie-title">{movie.title}</p>
             <li data-testid="movie-release-date">{handleReleaseDate(movie.release_date)}</li>
             <li>PG-13</li>
+<<<<<<< HEAD
             <li data-testid="movie-runtime">{movie.runtime} minutes</li>
+=======
+            <li data-testid="movie-runtime">{movie.runtime}</li>
+>>>>>>> upstream/main
           </ul>
           <div>
             {movie.genres.map((genre) => {

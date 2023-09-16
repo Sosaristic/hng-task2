@@ -32,6 +32,7 @@ export default function MovieCard({
   };
   return (
     <div
+<<<<<<< HEAD
       className="flex flex-col gap-[0.75rem] md:w-[45%] lg:w-[14rem] relative cursor-pointer"
       onClick={handleNavigate}
       data-testid="movie-card"
@@ -45,6 +46,22 @@ export default function MovieCard({
 
       <div className="text-greyText flex font-[700] text-[0.75rem] items-center">
         <p data-testid="movie-release-date">Release Date: {release_date}</p>
+=======
+      className="flex flex-col gap-[0.75rem] md:w-[45%] lg:w-[15.5rem] relative cursor-pointer"
+      onClick={handleNavigate}
+      data-testid="movie-card"
+    >
+      <div className="h-[23.125rem] relative  ">
+        <img
+          src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : Poster404}
+          alt={title}
+          className="h-full w-full object-cover"
+          data-testid="movie-poster"
+        />
+      </div>
+      <div className="text-greyText flex font-[700] text-[0.75rem] items-center">
+        <p data-testid="movie-release-date"> {release_date}</p>
+>>>>>>> upstream/main
 
         <span className="ml-auto text-xl p-1 text-rose" onClick={handleFavorite}>
           {favorite ? <MdFavorite /> : <MdFavoriteBorder />}
